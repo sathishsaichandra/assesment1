@@ -1,11 +1,26 @@
                                                        JAVASCRIPT ASSIGNMENT-2
 //1)Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to the second one.
 //solution:
-const matches = (obj, obj1) =>
-Object.keys(obj1).every(key => obj.hasOwnProperty(key) && obj[key]=== obj1[key]);
-console.log(matches({age:25,hair:'long',beard:true },{hair:'long',beard: true}));//true
-console.log(matches({age:25,hair:'long',beard:true },{age:25,hair:'long',beard:true}));//true
-console.log(matches({age:25,hair:'long',beard:true },{age:26,hair:'long',beard:true}));//false
+var object1 ={name:'sathish',age:23};
+var object2 ={name:'sathish',age:23};
+function compareobjects(object1,object2){
+var obj1=Object.getOwnPropertyNames(object1);
+var obj2=Object.getOwnPropertyNames(object2);
+if(obj1.length !== obj2.length)
+{
+  return false;
+}
+for(var i=0;i<obj1.length;i++)
+{
+    var propname=obj1[i];
+    if(object1[propname]!== object2[propname])
+    {
+        return false;
+    }
+}
+return true;
+}
+console.log(compareobjects(object1,object2));
 
 //2)How to create a Javascript class in ES6? Write code with example using inheritance.
 //solution:
