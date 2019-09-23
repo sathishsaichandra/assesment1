@@ -78,18 +78,22 @@ class professionallife{
         console.log(this.name + ' works at clicklabs');
     }
 }class Personallife extends professionallife{
-    constructor(name, freetime) {
+    constructor(name,freetime) {
         super(name);
-        this.name=name;
-        this.freetime = freetime;
+       this.freetime = freetime;
     }    
     speak() {
     super.speak();
         console.log(this.name +` doesn't reveal his personal life`) ;
     }
-}let person = new Personallife('sathish')
+    totalfreetime()
+    {
+        console.log(this.name +`is having total freetime of ${this.freetime}`)
+    }
+}
+let person = new Personallife('sathish','sevenhours')
 person.speak(); 
-
+person.totalfreetime()
 3)Explain Destructuring Assignment in ES6? Write code with example.
 solution:
 Destructuring simply implies breaking down a complex structure into simpler parts. In JavaScript, this complex structure is usually an object or an array. With the destructuring syntax, you can extract smaller fragments from arrays and objects. Destructuring syntax can be used for variable declaration or variable assignment. You can also handle nested structures by using nested destructuring syntax.
